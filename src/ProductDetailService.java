@@ -110,5 +110,14 @@ public class ProductDetailService {
         }
         
     }
+    public static String addCartToDB(){
+        System.out.println(ProductDetailFrame.nameproduct.getText() + " " +
+                ProductDetailFrame.bandtxt.getText()+ " "+
+                ProductDetailFrame.colortxt.getText()+ " "+
+                 ProductDetailFrame.sizetxt.getText()+ " "+
+                 ProductDetailFrame.pricetxt.getText()+ " "+
+                 ProductDetailFrame.numtxt.getText()+ " ");
+        return "";
+    }
 
 }

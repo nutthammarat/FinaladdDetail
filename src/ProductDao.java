@@ -15,6 +15,7 @@ import org.bson.*;
 import java.util.*;
 import javax.xml.crypto.Data;
 import org.bson.types.ObjectId;
+
 public class ProductDao {
     static MongoClientURI uri = new MongoClientURI("mongodb://admin:password1@ds249503.mlab.com:49503/finalproject");
     static MongoClient client = new MongoClient(uri);
@@ -44,8 +45,17 @@ public class ProductDao {
         }
         return thisProduct;
     }
-     
-  public static void main(String[] args) throws Exception {
+    
+    static public boolean addProduct(Product product){
+        if(getProduct(product.getId()) == null){
+           col.insertOne(new Document("_id",product.getId()).append("picture", product.getPicture()).append("name", product.getName())
+           .append("price", product.getPrice()).append("size", product.getSize()).append("color", product.getColor()).append("brand", product.getBrand()));
+            return true;
+        }else
+            return false;
+    }
+    
+//  public static void main(String[] args) throws Exception {
 //        //Load our image
 //        byte[] imageBytes = LoadImage("C:/Temp/bear.bmp");
 //        //Connect to database
@@ -64,5 +74,5 @@ public class ProductDao {
 //        FileOutputStream outputImage = new FileOutputStream("C:/Temp/bearCopy.bmp");
 //        out.writeTo( outputImage );
 //        outputImage.close();
-    }
+//    }
 }

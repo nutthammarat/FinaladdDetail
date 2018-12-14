@@ -20,7 +20,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
-        MainpageService.getInfo();
+        ProductService.getInfo();
     }
 
     /**

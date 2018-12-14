@@ -9,7 +9,7 @@ import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public abstract class MainpageService {
+public abstract class ProductService {
 
     public static ArrayList<Product> showAllProduct() {
         return ProductDao.getAllProducts();
@@ -18,12 +18,16 @@ public abstract class MainpageService {
     public static Product getProduct(String pId) {
         return ProductDao.getProduct(pId);
     }
-
+    
+    public static boolean addProduct(Product product){
+        return ProductDao.addProduct(product);
+    }
+    
     static void getInfo() {
-        ArrayList<Product> product = MainpageService.showAllProduct();
+        ArrayList<Product> product = ProductService.showAllProduct();
         int i = 0;
         for (Product e : product) {
-            Product product1 = MainpageService.getProduct(e.getId());
+            Product product1 = ProductService.getProduct(e.getId());
             if (i == 0) {
                 MainPage.x10.setText(product1.getName().toUpperCase());
                 ImageIcon icon = new ImageIcon("D:\\FinalProject-master\\src\\org\\me\\myimageapp\\resources\\chelsea-shirt.png");

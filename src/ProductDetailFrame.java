@@ -173,7 +173,8 @@ public class ProductDetailFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_minusbtnActionPerformed
 
     private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed
-        ProductDetailService.showCcomfirmProducttoCart();
+//        ProductDetailService.showCcomfirmProducttoCart();
+        ProductDetailService.addCartToDB();
         setVisible(false);
     }//GEN-LAST:event_addtocartActionPerformed
 
